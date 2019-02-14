@@ -8,10 +8,14 @@ class Genres extends Component {
   render() {
     const genresMovieData = this.props.genresMovieData;
     return (
-      <>
+      <div className="col-sm-3 card">
+        <header className="card-header">
+          <h6 className="title">Genres </h6>
+        </header>
         {genresMovieData.map((item, index) => {
           return (
-            <React.Fragment key={index}>
+            <div key={index} className="">
+              <label className="form-check" />
               <input
                 type="checkbox"
                 id={item.id}
@@ -19,11 +23,11 @@ class Genres extends Component {
                 onChange={this.props.checkBoxesCheck}
                 className="badge-danger"
               />
-              {item.name}
-            </React.Fragment>
+              <span className="form-check-label">{item.name}</span>
+            </div>
           );
         })}
-      </>
+      </div>
     );
   }
 }

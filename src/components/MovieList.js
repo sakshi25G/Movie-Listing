@@ -109,30 +109,38 @@ class MovieList extends Component {
 
     return (
       <>
-        <input
-          ref={ref => {
-            this.ratingInput = ref;
-          }}
-          type="number"
-          min="0"
-          max="10"
-          step="0.5"
-          placeholder="0"
-          onChange={this.filterByRatings}
-        />
+        <div className="col-sm-2 card">
+          <header className="card-header">
+            <h6 className="title">Ratings </h6>
+          </header>
+          <input
+            ref={ref => {
+              this.ratingInput = ref;
+            }}
+            type="number"
+            min="0"
+            max="10"
+            step="0.5"
+            placeholder="0"
+            onChange={this.filterByRatings}
+          />
+        </div>
         {!_.isEmpty(genresMovieData) && (
           <Genres
             genresMovieData={genresMovieData}
             checkBoxesCheck={this.checkBoxesCheck}
           />
         )}
-        <div className="col-xs-6">
+        <div className="col-sm-7">
+          <header className="card-header">
+            <h6 className="title">Movie List </h6>
+          </header>
           {!_.isEmpty(movieData) && !_.isEmpty(genresMovieData) ? (
             movieData.map((item, index) => {
               const genres = this.filterGenres(item.genre_ids, genresMovieData);
               return (
                 <React.Fragment key={index}>
-                  <div className={"card col-xs-6"}>
+                  <div className={"card"}>
                     <img
                       alt=""
                       className="poster-img"
