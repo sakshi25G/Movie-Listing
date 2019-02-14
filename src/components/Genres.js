@@ -21,7 +21,7 @@ class Genres extends Component {
                 id={item.id}
                 value={item.name}
                 onChange={this.props.checkBoxesCheck}
-                className=""
+                className="badge-danger"
               />
               <span className="form-check-label">{item.name}</span>
             </div>
