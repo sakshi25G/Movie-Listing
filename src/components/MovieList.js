@@ -5,6 +5,7 @@ import _ from "lodash";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./movieList.scss";
 import Genres from "./Genres";
+
 class MovieList extends Component {
   constructor(props) {
     super(props);
