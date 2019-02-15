@@ -109,28 +109,6 @@ class MovieList extends Component {
 
     return (
       <>
-        <div className="col-sm-2 card">
-          <header className="card-header">
-            <h6 className="title">Ratings </h6>
-          </header>
-          <input
-            ref={ref => {
-              this.ratingInput = ref;
-            }}
-            type="number"
-            min="0"
-            max="10"
-            step="0.5"
-            placeholder="0"
-            onChange={this.filterByRatings}
-          />
-        </div>
-        {!_.isEmpty(genresMovieData) && (
-          <Genres
-            genresMovieData={genresMovieData}
-            checkBoxesCheck={this.checkBoxesCheck}
-          />
-        )}
         <div className="col-sm-7">
           <header className="card-header">
             <h6 className="title">Movie List </h6>
@@ -155,6 +133,28 @@ class MovieList extends Component {
           ) : (
             <p>No movie available.</p>
           )}
+        </div>
+        {!_.isEmpty(genresMovieData) && (
+          <Genres
+            genresMovieData={genresMovieData}
+            checkBoxesCheck={this.checkBoxesCheck}
+          />
+        )}
+        <div className="col-sm-2 card">
+          <header className="card-header">
+            <h6 className="title">Ratings </h6>
+          </header>
+          <input
+            ref={ref => {
+              this.ratingInput = ref;
+            }}
+            type="number"
+            min="0"
+            max="10"
+            step="0.5"
+            placeholder="0"
+            onChange={this.filterByRatings}
+          />
         </div>
       </>
     );
